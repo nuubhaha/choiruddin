@@ -1,0 +1,68 @@
+//   1. pencarian
+  #include <stdio.h>
+  #include <conio.h>
+int main(){
+    //deklarasi vuntuk ariabel
+    int A[10],index[10], i,j,k;
+    //proses penginputan/pemasukan data
+    for(i=0;i<10;i++){
+        printf("masukan data ke : %d:",i+1);
+        scanf("%d",&A[i]);}
+//memasukkan data yang akan dicari 
+    printf("Masukkan nilai yang anda cari:");
+    scanf("%d",&k);
+//proses pencarian data
+    j=0;
+    for (i=0;i<10;i++){
+        if(A[i]==k){
+            index[j]=i;
+            j++; } }
+//kondisi jika data ditemukan dalam array
+    if (j>0){
+        printf("Data %d yang dicari terdapat %d buah\n",k,j);
+            printf("Data tersebut terdapat berada pada index ke :");
+    for(i=0;i<j;i++){
+        printf(" %d ",index[i]);}
+            printf("\n");}
+//jika tidak ditemukan
+    else{
+        printf("Data tidak ditemukan dalam pencarian tersebut\n");}
+return 1;}
+
+
+bubles sort
+
+//Pengurutan secara ascending dengan metoda Bubble Sort
+
+#include <stdio.h>
+#define N 20
+int bubble(int n);
+int i,j,A[N];
+
+main(){
+int jml;
+system("cls");
+printf("METODA BUBBLE SORT \n\n");
+printf("Masukkan jumlah bilangan (maks 20) : ");
+scanf("%d",&jml);
+printf("\n");
+// input data
+for (i=0;i<jml;i++){
+   printf("Bilangan ke %d : ",i+1);
+   scanf("%d",&A[i]);}
+printf("\n");
+// mengurutkan data
+bubble(jml);
+// menampilkan data
+printf("Data yang sudah terurut : \n");
+for (i=0;i<jml;i++){
+   printf("%d\n",A[i]);}}
+// fungsi bubble
+int bubble(int n){
+int temp;
+for (i=1;i<=n-1;i++){
+   for (j=i;j<n;j++){
+               if (A[i-1]>A[j]){
+                           temp = A[i-1];
+                           A[i-1] = A[j];
+                           A[j] = temp;}}}}
